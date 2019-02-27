@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -54,7 +55,8 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
     MatToolbarModule,
     MatSnackBarModule,
     MatBadgeModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

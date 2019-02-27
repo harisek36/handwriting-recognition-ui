@@ -45,7 +45,8 @@ progressBarDisplayList: boolean[] = new Array(100)
     if(this.imageUrl != "/assets/img/upload.png"){
       this.imageList.push(this.imageUrl) 
       this.filesToUploadList.push(this.fileToUpload)
-    
+      this.imageUrl = "/assets/img/upload.png"
+
     }
 
 
@@ -64,8 +65,8 @@ progressBarDisplayList: boolean[] = new Array(100)
     for(let i = 0; i < this.filesToUploadList.length; i++){
       uploadData.append('imagefile', this.filesToUploadList[i], this.filesToUploadList[i].name);
     this.http.post('http://127.0.0.1:5000/handwritting', uploadData)
-    .subscribe(result => {
-      this.outputList[i] = result.text
+    .subscribe(imageRecText => {
+      this.outputList[i] = imageRecText.text
       console.log(this.outputList)
     })
     }
@@ -73,6 +74,7 @@ progressBarDisplayList: boolean[] = new Array(100)
   }
 
   runAnalysis(index: number) {
+    this.outputList[index] = ""
     this.progressBarDisplayList[index] = true
     const uploadData = new FormData();
     uploadData.append('imagefile', this.filesToUploadList[index], this.filesToUploadList[index].name);

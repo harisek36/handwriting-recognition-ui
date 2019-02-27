@@ -39,16 +39,25 @@
   </div>
 </div>
 
-<mat-card class="container" [style.backgroundColor]="'#4054AD'" ><h5>AI Handwriting Reader</h5> </mat-card>
+<!-- <mat-card class="container" [style.backgroundColor]="'#4054AD'" ><h5>AI Handwriting Reader</h5> </mat-card> -->
+<div class="container">
+  <mat-toolbar color="primary" >
+    AI Handwriting Reader
+</mat-toolbar>
+</div>
+
 <br>
 <br>
 <div class="row jumbotron">
-  <div *ngFor="let image of imageList; let i = index" class="col-md-4">
+  <div *ngFor="let image of imageList; let i = index" class="col-md-4" style="margin-bottom: 20px">
+
     <mat-card >
         <mat-card-header>
           <mat-card-title>Image {{i + 1}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="image" alt="Photo of a Shiba Inu">
+        <div class="container">
+          <img mat-card-image  [src]="image" style="width:200px;height:150px">
+        </div>
 
         <mat-progress-bar *ngIf="progressBarDisplayList[i] == true" mode="indeterminate"></mat-progress-bar>
 

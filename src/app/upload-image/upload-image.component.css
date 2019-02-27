@@ -1,5 +1,12 @@
 .example-card {
     max-width: 400px;
-    padding-bottom: 2-px
+
   }
-  
+
+  .mat-card{
+    padding-top: 0px;
+  }
+
+.paddingset {
+  padding-bottom: 25px;
+}
